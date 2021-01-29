@@ -65,14 +65,13 @@ Note: Add the environment variable without the hashtag. echo $JAVA_HOME should r
 **Table 1:** Procedure to download the main packages for JModelica.
 | Package  | Version | Download Link |
 | ------------- | ------------- | ------------- |
-|  Ipopt <sup>a</sup>  |  3.12 (revision 2778)  |  checkout the source files from the subversion repository using the command lines in Code Block 3 |
+|  Ipopt  |  3.12 (revision 2778)  |  checkout the source files from the subversion repository using the command lines in Code Block 3 |
 |  Third party dependencies for Ipopt  |  -  |  download the dependencies using the command lines shown in Code Block 4  |
-|  HSL for Ipopt <sup>b</sup>  |  coinhsl v2015.06.23  |  request personal licence from HSL at the following [link](http://www.hsl.rl.ac.uk/ipopt/)  |
-|  JModelica  |  2.1 (r10720)  |  request public open source version from JModelica.org <sup>c</sup>  |
+|  HSL for Ipopt <sup>a</sup>  |  coinhsl v2015.06.23  |  request personal licence from HSL at the following [link](http://www.hsl.rl.ac.uk/ipopt/)  |
+|  JModelica  |  2.1 (r10720)  |  request public open source version from JModelica.org <sup>b</sup>  |
 
-<sup>a</sup> Prerequisite to install JModelica.
-<sup>b</sup> HSL provides a number of linear solvers that can be used in Ipopt. For the reader reference, the command lines to include the HSL package in Ipopt are shown in Code Block 5, however, HSL solvers were not used to simulate this testbed.
-<sup>c</sup> At the time this testbed was developed, JModelica source files were checked out from the subversion repository. However, checking out JModelica was associated with an error during checkout of the Assimulo simulation package. This was resolved by checking out the Assimulo source files in a separate checkout command from the JModelica checkout command. This is worth being pointed out so that the reader ensures the JModelica source files supplied by JModelica.org includes Assimulo. For the reader reference, the command lines to checkout JModelica and Assimulo are shown in Code Block 6, however, since the time this testbed was developed JModelica.org discontinued providing direct access to the source files from the links in Code Block 6. It is also worth pointing out that, JModelica source files include Modelica Standard Library 3.2.2, which is a prerequisite to simulate this testbed.
+<sup>a</sup> HSL provides a number of linear solvers that can be used in Ipopt. For the reader reference, the command lines to include the HSL package in Ipopt are shown in Code Block 5, however, HSL solvers were not used to simulate this testbed.
+<sup>b</sup> At the time this testbed was developed, JModelica source files were checked out from the subversion repository. However, checking out JModelica was associated with an error during checkout of the Assimulo simulation package. This was resolved by checking out the Assimulo source files in a separate checkout command from the JModelica checkout command. This is worth being pointed out so that the reader ensures the JModelica source files supplied by JModelica.org includes Assimulo. For the reader reference, the command lines to checkout JModelica and Assimulo are shown in Code Block 6, however, since the time this testbed was developed JModelica.org discontinued providing direct access to the source files from the links in Code Block 6. It is also worth pointing out that, JModelica source files include Modelica Standard Library 3.2.2, which is a prerequisite to simulate this testbed.
 
 Code Block 3: checking out Ipopt source files from the subversion repository.
 ~~~
@@ -223,56 +222,29 @@ $ echo $MODELICAPATH
 ~~~
 Note: Add the environment variable without the hashtag. As noted earlier, Modelica Standard Library 3.2.2 is installed with JModelica source files, thus, MSL directory path is located within the JModelica directory. echo $MODELICAPATH should return the MODELICAPATH directory paths.
 
+**16.** Install pandas for data manipulation and analysis using the command line shown in Code Block 14, with the specific package version. 
 
-Code Block 14: Testing MultizoneVAV. 
+Code Block 14: Installing pandas.
+~~~
+pip install 'pandas==0.23.4'
+~~~
+
+**15.** Simulate MultizoneVAV using the command lines shown in Code Block 15 to test the installation.
+
+Code Block 15: Testing MultizoneVAV. 
 ~~~
 $ $JMODELICA_HOME/bin/jm_ipython.sh
-
-$ from pymodelica import compile_fmu
-$ from pyfmi import load_fmu
-$ import matplotlib.pyplot as P
 
 $ mkdir ~/TestingMultizoneVAV
 $ cd ~/TestingMultizoneVAV
 
-$ fmu_name = compile_fmu("MultizoneVAV.UncertaintyModels.VAVReheat.Guideline36", jvm_args='-Xmx4g', compiler_options={"generate_html_diagnostics":True})
-$ model= load_fmu(fmu_name,log_level=7)
-$ dayOfYear_start=7*(24*60*60)
-$ hourOfDay_start=7*(60*60)
-$ minuteOfHour_start=0*(60)
-
-$ daySimRange=0*(24*60*60)
-$ hourSimRange=1*(60*60)
-$ minuteSimRange=0*(60)
-
-$ sim_Start = dayOfYear_start+hourOfDay_start+minuteOfHour_start
-$ SimulationRange = daySimRange+hourSimRange+minuteSimRange
-
-$ res=model.simulate(start_time=sim_Start, final_time=sim_Start+SimulationRange)
-
-# Convert from K to C
-$ conv_K_C=273.15
-
-# Time
-$ t=res['time']
-
-# Physical zone air temperature for the two thermal zones without noise
-$ T_406=res['flo.senTemRoo_406.T']-conv_K_C
-$ T_222=res['flo.senTemRoo_222.T']-conv_K_C
-
-# Zone air temperature with noise
-$ T_406_N=res['flo.addNoise_senTemRoo_406.y']-conv_K_C
-$ T_222_N=res['flo.addNoise_senTemRoo_222.y']-conv_K_C
-
-$ P.plot(t,T_406,t,T_222,t,T_406_N,t,T_222_N)
-$ P.legend(['T$_{406}$','T$_{222}$','T$_{406, N}$','T$_{222, N}$'])
-$ P.show()
+$ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36.py
 
 $ exit
 $ cd ~
 $ rm -r ~/TestingMultizoneVAV
 ~~~
-Note: This will simulate the MultizoneVAV system for one hour during Jan 7 from 7:00 AM to 8:00 AM.
+Note: This will simulate the MultizoneVAV system for one hour during Jan 8 from 7:00 AM to 8:00 AM.
 
 # References
 [1]	M. Wetter, Z. Wangda, T. S. Nouidui, and P. Xiufeng, "Modelica Buildings library," Journal of Building Performance Simulation, vol. 7, no. 4, pp. 253-270, 2014, doi: http://dx.doi.org/10.1080/19401493.2013.765506.
