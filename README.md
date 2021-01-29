@@ -7,7 +7,7 @@ A two-zone model was developed and then coupled to a software implementation of 
 
 The models were built based on the structure of the OpenBuildingControl (OBC) example application for the G36 in a multiple zone VAV system [[3]](#3). The OBC project is intended to develop tools and processes for the performance evaluation, specification, deployment and verification of building control sequences. The models for the OBC example is maintained in the open-source MBL. We introduced adjustments and new models customized to performing model-based uncertainty quantification. For example, we introduced new stochastic models using the open-source Modelica noise sub-library [[4]](#4) that is maintained in the Modelica Standard Library (MSL) [[5]](#5). For the detailed description of the MBL component models, before being adjusted for this testbed, the reader is referred to the model documentation in [[6]](#6).
 
-The testbed was used to evaluate issues related to system design and control component selection, and performance sensitivity to various control-related parameters in [[7-9]][[1]](#7).
+The testbed was used to evaluate issues related to system design and control component selection, and performance sensitivity to various control-related parameters in [[7-9]](#7).
 
 # MultizoneVAV dependencies
 Modelica Standard Library 3.2.2
