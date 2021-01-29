@@ -1,19 +1,20 @@
 # MultizoneVAV
-Propagation of measurement and actuator uncertainty in a heating, ventilating, and air conditioning (HVAC) multiple zone variable air volume (VAV) system. The testbed was developed using component models from the Modelica Buildings Library (MBL), which is an open-source library that contains component models that can be modified if necessary and then used to produce system models for dynamic simulation [1].
+Propagation of measurement and actuator uncertainty in a heating, ventilating, and air conditioning (HVAC) multiple zone variable air volume (VAV) system. The testbed was developed using component models from the Modelica Buildings Library (MBL), which is an open-source library that contains component models that can be modified if necessary and then used to produce system models for dynamic simulation [[1]](#1).
 
-The testbed may be used to simulate the influence of the uncertainty inherent in the HVAC control components (e.g. sensors and actuators) on the system outputs of thermal comfort, indoor air quality (IAQ), and site electricity use. Thermal comfort was represented by the predicted percentage of dissatisfaction (PPD), which is derived from zone air temperature and relative humidity combined with assumptions about occupant’s clothing and activity level; and IAQ was represented by carbon dioxide (CO2) concentration. The multiple zone VAV system model was programmed with ASHRAE Guideline 36 (G36) – High-Performance Sequences of Operation for HVAC Systems, which describes standardized sequences of operation for common HVAC systems [2].
+The testbed may be used to simulate the influence of the uncertainty inherent in the HVAC control components (e.g. sensors and actuators) on the system outputs of thermal comfort, indoor air quality (IAQ), and site electricity use. Thermal comfort was represented by the predicted percentage of dissatisfaction (PPD), which is derived from zone air temperature and relative humidity combined with assumptions about occupant’s clothing and activity level; and IAQ was represented by carbon dioxide (CO2) concentration. The multiple zone VAV system model was programmed with ASHRAE Guideline 36 (G36) – High-Performance Sequences of Operation for HVAC Systems, which describes standardized sequences of operation for common HVAC systems [[2]](#2).
 
 A two-zone model was developed and then coupled to a software implementation of a sequence of operation applicable to the building. The building thermal model was developed using technical specifications collected from a real-world typical medium office building located in State College, PA. The numbering of the zones in the real-world application (i.e., zone 406 and zone 222) was used to refer to the thermal zones in this testbed.
 
-The models were built based on the structure of the OpenBuildingControl (OBC) example application for the G36 in a multiple zone VAV system [3]. The OBC project is intended to develop tools and processes for the performance evaluation, specification, deployment and verification of building control sequences. The models for the OBC example is maintained in the open-source MBL. We introduced adjustments and new models customized to performing model-based uncertainty quantification. For example, we introduced new stochastic models using the open-source Modelica noise sub-library [4] that is maintained in the Modelica Standard Library (MSL) [5]. For the detailed description of the MBL component models, before being adjusted for this testbed, the reader is referred to the model documentation in [6].
+The models were built based on the structure of the OpenBuildingControl (OBC) example application for the G36 in a multiple zone VAV system [[3]](#3). The OBC project is intended to develop tools and processes for the performance evaluation, specification, deployment and verification of building control sequences. The models for the OBC example is maintained in the open-source MBL. We introduced adjustments and new models customized to performing model-based uncertainty quantification. For example, we introduced new stochastic models using the open-source Modelica noise sub-library [[4]](#4) that is maintained in the Modelica Standard Library (MSL) [[5]](#5). For the detailed description of the MBL component models, before being adjusted for this testbed, the reader is referred to the model documentation in [[6]](#6).
 
-The testbed was used to evaluate issues related to system design and control component selection, and performance sensitivity to various control-related parameters in [7-9].
+The testbed was used to evaluate issues related to system design and control component selection, and performance sensitivity to various control-related parameters in [[7-9]][[1]](#7).
 
 # MultizoneVAV dependencies
 Modelica Standard Library 3.2.2
+
 Modelica Buildings Library 5.0.1
 
-# Compiling JModelica from sources on Ubuntu 
+# Compiling JModelica from sources on Ubuntu and installing MultizoneVAV
 The testbed was developed using JModelica version 2.1 textual simulation environment compiled on an Ubuntu 16.04.4 LTS distribution. The original installation procedure is provided in *JModelica User Manual 2.1*, however, since the time this testbed was developed JModelica.org discontinued providing direct access to the user manual. The reader may refer to the installation procedure in *JModelica User Manual 2.2* at the following [link](https://jmodelica.org/downloads/UsersGuide.pdf). It is worth pointing out that, the installation of JModelica is sensitive to the dependencies versions, i.e., the specific package version for the dependencies may be different between JModelica 2.1 and 2.2. This section describes a customized procedure for compiling JModelica from sources on Ubuntu. The customized step-by-step procedure is assigned to one master numbering sequence (represented as **bold numbering**).
 
 **1.** Download *ubuntu-16.04.4-desktop-amd64.iso* from the old Ubuntu releases webpage at the following [link](http://old-releases.ubuntu.com/releases/xenial/).
@@ -178,10 +179,9 @@ $ rm -r ~/TestingJModelica
 ~~~
 Note: The simulation will plot the results in separate pop-up windows, close the window for the simulation to continue.
 
-**9.** Download *Buildings-v5.0.1.zip* from the all releases of the MBL webpage at the following [link](https://simulationresearch.lbl.gov/modelica/downloads/archive/modelica-buildings.html).
+**10.** Download *Buildings-v5.0.1.zip* from the all releases of the MBL webpage at the following [link](https://simulationresearch.lbl.gov/modelica/downloads/archive/modelica-buildings.html).
 
-**10.** Copy *Buildings-v5.0.1.zip* to the home directory and install MBL using the command lines shown in Code Block 11. The original procedure to install MBL is provided at the following [link](https://simulationresearch.lbl.gov/modelica/installLibrary.html). 
-
+**11.** Copy *Buildings-v5.0.1.zip* to the home directory and install MBL using the command lines shown in Code Block 11. The original procedure to install MBL is provided at the following [link](https://simulationresearch.lbl.gov/modelica/installLibrary.html). 
 
 Code Block 11: Installation of MBL. 
 ~~~
@@ -192,9 +192,9 @@ $ sudo mkdir -p /usr/local/Modelica/Library/Buildings_5.0.1
 $ sudo mv ~/Buildings\ 5.0.1 /usr/local/Modelica/Library/Buildings_5.0.1
 ~~~
 
-**11.** Download *MultizoneVAV-master.zip* from the code button, download ZIP provided in this repository webpage at the following [link](https://github.com/sAbdelhaleem/MultizoneVAV).
+**12.** Download *MultizoneVAV-master.zip* from the code button, download ZIP provided in this repository webpage at the following [link](https://github.com/sAbdelhaleem/MultizoneVAV).
 
-**12.** Copy *MultizoneVAV-master.zip* to the home directory and install MultizoneVAV using the command lines shown in Code Block 12. 
+**13.** Copy *MultizoneVAV-master.zip* to the home directory and install MultizoneVAV using the command lines shown in Code Block 12. 
 
 Code Block 12: Installation of MultizoneVAV. 
 ~~~
@@ -205,7 +205,7 @@ $ mv MultizoneVAV-master MultizoneVAV_0.1.0
 $ sudo mv ~/MultizoneVAV_0.1.0 /usr/local/Modelica/Library
 ~~~
 
-**13.** Setup the MSL, MBL, and MultizoneVAV environmental variables using the command lines shown in Code Block 13.
+**14.** Setup the MSL, MBL, and MultizoneVAV environmental variables using the command lines shown in Code Block 13.
 
 Code Block 13: Setup the MSL, MBL, and MultizoneVAV environmental variables. 
 ~~~
@@ -222,14 +222,14 @@ $ echo $MODELICAPATH
 ~~~
 Note: Add the environment variable without the hashtag. As noted earlier, Modelica Standard Library 3.2.2 is installed with JModelica source files, thus, MSL directory path is located within the JModelica directory. echo $MODELICAPATH should return the MODELICAPATH directory paths.
 
-**16.** Install pandas for data manipulation and analysis using the command line shown in Code Block 14, with the specific package version. 
+**15.** Install pandas for data manipulation and analysis using the command line shown in Code Block 14, with the specific package version. pandas is not a prerequisite to install MultizoneVAV, however, it is used below to work with time series data.
 
 Code Block 14: Installing pandas.
 ~~~
 pip install 'pandas==0.23.4'
 ~~~
 
-**15.** Simulate MultizoneVAV using the command lines shown in Code Block 15 to test the installation.
+**16.** Simulate MultizoneVAV example to test the installation using the command lines shown in Code Block 15 to test the installation. The 
 
 Code Block 15: Testing MultizoneVAV. 
 ~~~
@@ -247,23 +247,23 @@ $ rm -r ~/TestingMultizoneVAV
 Note: This will simulate the MultizoneVAV system for one hour during Jan 8 from 7:00 AM to 8:00 AM.
 
 # References
-[1]	M. Wetter, Z. Wangda, T. S. Nouidui, and P. Xiufeng, "Modelica Buildings library," Journal of Building Performance Simulation, vol. 7, no. 4, pp. 253-270, 2014, doi: http://dx.doi.org/10.1080/19401493.2013.765506.
+<a name="1"></a>[1]	M. Wetter, Z. Wangda, T. S. Nouidui, and P. Xiufeng, "Modelica Buildings library," Journal of Building Performance Simulation, vol. 7, no. 4, pp. 253-270, 2014, doi: http://dx.doi.org/10.1080/19401493.2013.765506.
 
-[2]	Guideline 36-2018 High-Performance Sequences of Operation for HVAC Systems, American Society of Heating Refrigeration and Air-Conditioning Engineers, Atlanta, GA, USA, 2018. Accessed: Sep 7, 2020. [Online]. Available: https://www.techstreet.com/ashrae/standards/guideline-36-2018-high-performance-sequences-of-operation-for-hvac-systems?product_id=2016214
+<a name="2"></a>[2]	Guideline 36-2018 High-Performance Sequences of Operation for HVAC Systems, American Society of Heating Refrigeration and Air-Conditioning Engineers, Atlanta, GA, USA, 2018. Accessed: Sep 7, 2020. [Online]. Available: https://www.techstreet.com/ashrae/standards/guideline-36-2018-high-performance-sequences-of-operation-for-hvac-systems?product_id=2016214
 
-[3]	M. Wetter, J. Hu, M. Grahovac, B. Eubanks, and P. Haves, "OpenBuildingControl: Modeling feedback control as a step towards formal design, specification, deployment and verification of building control sequences," Building Performance Analysis Conference and SimBuild, 2018. Accessed: Jan 10,2021. [Online]. Available: https://www.ashrae.org/File%20Library/Conferences/Specialty%20Conferences/2018%20Building%20Performance%20Analysis%20Conference%20and%20SimBuild/Papers/C107.pdf.
+<a name="3"></a>[3]	M. Wetter, J. Hu, M. Grahovac, B. Eubanks, and P. Haves, "OpenBuildingControl: Modeling feedback control as a step towards formal design, specification, deployment and verification of building control sequences," Building Performance Analysis Conference and SimBuild, 2018. Accessed: Jan 10,2021. [Online]. Available: https://www.ashrae.org/File%20Library/Conferences/Specialty%20Conferences/2018%20Building%20Performance%20Analysis%20Conference%20and%20SimBuild/Papers/C107.pdf.
 
-[4]	Modelica Noise library. (2015). German Aerospace Center (DLR). Accessed: Jan 08, 2021. [Online]. Available: https://github.com/DLR-SR/Noise
+<a name="4"></a>[4]	Modelica Noise library. (2015). German Aerospace Center (DLR). Accessed: Jan 08, 2021. [Online]. Available: https://github.com/DLR-SR/Noise
 
-[5]	Modelica Standard Library, 3.2.2+build.3 ed., (04/03/2016). Modelica Association. Accessed: Nov 23, 2020. [Online]. Available: https://github.com/modelica/ModelicaStandardLibrary/releases/tag/v3.2.2
+<a name="5"></a>[5]	Modelica Standard Library, 3.2.2+build.3 ed., (04/03/2016). Modelica Association. Accessed: Nov 23, 2020. [Online]. Available: https://github.com/modelica/ModelicaStandardLibrary/releases/tag/v3.2.2
 
-[6]	Modelica Buildings Library: Model Documentation, 5.0.1 ed., (11/22/2017). Lawrence Berkeley National Laboratory (LBNL). Accessed: Jan 08, 2021. [Online]. Available: https://simulationresearch.lbl.gov/modelica/releases/v5.0.1/help/Buildings.html
+<a name="6"></a>[6]	Modelica Buildings Library: Model Documentation, 5.0.1 ed., (11/22/2017). Lawrence Berkeley National Laboratory (LBNL). Accessed: Jan 08, 2021. [Online]. Available: https://simulationresearch.lbl.gov/modelica/releases/v5.0.1/help/Buildings.html
 
-[7]	S. M. Abdel Haleem, G. S. Pavlak, and W. P. Bahnfleth, "Performance of advanced control sequences in handling uncertainty in energy use and indoor environmental quality using uncertainty and sensitivity analysis for control components," Energy and Buildings, vol. 225, p. 110308, 2020, doi: https://doi.org/10.1016/j.enbuild.2020.110308.
+<a name="7"></a>[7]	S. M. Abdel Haleem, G. S. Pavlak, and W. P. Bahnfleth, "Performance of advanced control sequences in handling uncertainty in energy use and indoor environmental quality using uncertainty and sensitivity analysis for control components," Energy and Buildings, vol. 225, p. 110308, 2020, doi: https://doi.org/10.1016/j.enbuild.2020.110308.
 
-[8]	S. M. Abdel Haleem, "Impact of Component Uncertainty and Control Loop on Performance in HVAC Systems with Advanced Sequences of Operation," Doctor of Philosophy, Architectural Engineering, The Pennsylvania State University, 2020. Accessed: Jan 08, 2021. [Online]. Available: https://etda.libraries.psu.edu/catalog/17584sma282.
+<a name="8"></a>[8]	S. M. Abdel Haleem, "Impact of Component Uncertainty and Control Loop on Performance in HVAC Systems with Advanced Sequences of Operation," Doctor of Philosophy, Architectural Engineering, The Pennsylvania State University, 2020. Accessed: Jan 08, 2021. [Online]. Available: https://etda.libraries.psu.edu/catalog/17584sma282.
 
-[9]	S. Abdel Haleem, G. Pavlak, and W. Bahnfleth, “Impact of Control Loop Performance on Energy Use, Air Quality, and Thermal Comfort in Building Systems with Advanced Sequences of Operation,” Automation in Construction. (Under Review)
+<a name="9"></a>[9]	S. Abdel Haleem, G. Pavlak, and W. Bahnfleth, “Impact of Control Loop Performance on Energy Use, Air Quality, and Thermal Comfort in Building Systems with Advanced Sequences of Operation,” Automation in Construction. (Under Review)
 
 # License & copyright
 © 2021 Shadi Abdel Haleem
