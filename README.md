@@ -275,6 +275,7 @@ Copyright (c) 2021 Shadi Abdel Haleem
 MultizoneVAV is provided as free software under the terms of the GNU General Public License (GNU GPL). Redistribution and use, with or without modification, are permitted with any express or implied warranties, including, but not limited to, the implied warranties of merchantability and fitness for a particular purpose are disclaimed. For the terms of the GNU GPL, please refer to http://www.gnu.org/licenses
 
 **2.** Modelica Buildings Library
+
 MultizoneVAV includes source code from the Modelica Buildings Library (MBL) with modification. Accordingly, following is the MBL license.
 
 Modelica Buildings Library. Copyright (c) 1998-2020 Modelica Association, International Building Performance Simulation Association (IBPSA), The Regents of the University of California, through Lawrence Berkeley National Laboratory (subject to receipt of any required approvals from the U.S. Dept. of Energy) and contributors. All rights reserved.
@@ -288,6 +289,7 @@ Redistribution and use in source and binary forms, with or without modification,
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 **3.** Modelica Standard Library
+
 MultizoneVAV includes source code from the Modelica Standard Library (MSL) with modification. Accordingly, following is the MSL license.
 
 Copyright (c) 1998-2020, Modelica Association and contributors
