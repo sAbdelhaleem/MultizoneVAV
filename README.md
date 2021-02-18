@@ -18,9 +18,9 @@ This section describes a customized procedure for compiling JModelica.org from s
 
 **2.** Perform a fresh installation of Ubuntu. In the installation prcedure check the radio buttons next to "download updates while installing", and "install third-party software …"
 
-**3.** Install the JModelica.org dependencies using the command lines shown in Code Block 1, each with the specific package version.
+**3.** Install the JModelica.org dependencies using the command lines shown in [Code Block 1](#Code Block 1), each with the specific package version.
 
-Code Block 1: Installation of JModelica.org dependencies using specific package version.
+<a name="Code Block 1"></a>Code Block 1: Installation of JModelica.org dependencies using specific package version.
 ~~~
 sudo apt-get -y install python-dev=2.7.12-1~16.04
 sudo apt-get -y install python-setuptools=20.7.0-1
@@ -43,9 +43,9 @@ sudo apt-get -y install subversion=1.9.3-2ubuntu1.3
 sudo apt-get -y install zlib1g-dev=1:1.2.8.dfsg-2ubuntu4.3
 ~~~
 
-**4.** Setup the Java environment variable using the command lines shown in Code Block 2.
+**4.** Setup the Java environment variable using the command lines shown in [Code Block 2](#Code Block 2).
 
-Code Block 2: Setup the Java environment variable.
+<a name="Code Block 2"></a>Code Block 2: Setup the Java environment variable.
 ~~~
 $ sudo gedit /etc/environment
 
@@ -63,25 +63,25 @@ Note: Add the environment variable without the hashtag. echo $JAVA_HOME should r
 **Table 1:** Procedure to download the main packages for JModelica.org.
 | Package  | Version | Download Procedure |
 | ------------- | ------------- | ------------- |
-|  Ipopt  |  3.12 (revision 2778)  |  checkout the source files from the subversion repository using the command lines in Code Block 3 |
-|  Third party dependencies for Ipopt  |  -  |  download the dependencies using the command lines shown in Code Block 4  |
+|  Ipopt  |  3.12 (revision 2778)  |  checkout the source files from the subversion repository using the command lines in [Code Block 3](#Code Block 3) |
+|  Third party dependencies for Ipopt  |  -  |  download the dependencies using the command lines shown in [Code Block 4](#Code Block 4)  |
 |  HSL for Ipopt <sup>a</sup>  |  coinhsl v2015.06.23  |  request personal licence from HSL at <http://www.hsl.rl.ac.uk/ipopt/>  |
-|  JModelica.org  |  2.1 (r10720)  |  1) download *JModelica.org-master.zip* from the code button (download ZIP) provided in my [JModelica.org redistribution repository](../../../JModelica.org) <sup>b</sup>; 2) copy *JModelica.org-master.zip* to the home directory; and 3) unzip *JModelica.org-master.zip* using the command lines in Code Block 6  |
+|  JModelica.org  |  2.1 (r10720)  |  1) download *JModelica.org-master.zip* from the code button (download ZIP) provided in my [JModelica.org redistribution repository](../../../JModelica.org) <sup>b</sup>; 2) copy *JModelica.org-master.zip* to the home directory; and 3) unzip *JModelica.org-master.zip* using the command lines in [Code Block 6](#Code Block 6)  |
 
-<sup>a</sup> HSL provides a number of linear solvers that can be used in Ipopt. For the reader reference, the command lines to include the HSL package in Ipopt are shown in Code Block 5, however, HSL solvers were not used to simulate this testbed.
+<sup>a</sup> HSL provides a number of linear solvers that can be used in Ipopt. For the reader reference, the command lines to include the HSL package in Ipopt are shown in [Code Block 5](#Code Block 5), however, HSL solvers were not used to simulate this testbed.
 
 <sup>b</sup> This is a software repository that redistributes JModelica.org version 2.1 (r10720) without modification. It is worth pointing out that, JModelica.org source files include Modelica Standard Library 3.2.2, which is a prerequisite to simulate this testbed.
 
-As an alternative to downloading *JModelica.org-master.zip* from my [JModelica.org redistribution repository](../../../JModelica.org), the user may request a public open source version from <https://jmodelica.org/>. At the time this testbed was developed, JModelica.org source files were checked out from the subversion repository. However, checking out JModelica.org was associated with an error during checkout of the Assimulo simulation package. This was resolved by checking out the Assimulo source files in a separate checkout command from the JModelica.org checkout command. This is worth being pointed out so that the reader ensures the JModelica.org source files supplied by JModelica.org includes Assimulo. For the reader reference, the command lines to checkout JModelica.org and Assimulo are shown in Code Block 7. However, since the time this testbed was developed, JModelica.org discontinued providing direct access to the source files from the links in Code Block 7. 
+As an alternative to downloading *JModelica.org-master.zip* from my [JModelica.org redistribution repository](../../../JModelica.org), the user may request a public open source version from <https://jmodelica.org/>. At the time this testbed was developed, JModelica.org source files were checked out from the subversion repository. However, checking out JModelica.org was associated with an error during checkout of the Assimulo simulation package. This was resolved by checking out the Assimulo source files in a separate checkout command from the JModelica.org checkout command. This is worth being pointed out so that the reader ensures the JModelica.org source files supplied by JModelica.org includes Assimulo. For the reader reference, the command lines to checkout JModelica.org and Assimulo are shown in [Code Block 7](#Code Block 7). However, since the time this testbed was developed, JModelica.org discontinued providing direct access to the source files from the links in [Code Block 7](#Code Block 7).
 
-Code Block 3: checking out Ipopt source files from the subversion repository.
+<a name="Code Block 3"></a>Code Block 3: checking out Ipopt source files from the subversion repository.
 ~~~
 $ cd ~
 $ svn co https://projects.coin-or.org/svn/Ipopt/stable/3.12 Ipopt
 ~~~
 Note: This will download Ipopt source files (revision 2778) in the ~/Ipopt directory.
 
-Code Block 4: Downloading third party dependencies for Ipopt.
+<a name="Code Block 4"></a>Code Block 4: Downloading third party dependencies for Ipopt.
 ~~~
 $ cd ~/Ipopt/ThirdParty/Blas
 $ ./get.Blas
@@ -93,7 +93,7 @@ $ cd ../Metis
 $ ./get.Metis
 ~~~
 
-Code Block 5: Copying HSL source files into the ~/Ipopt/ThirdParty/HSL directory, and renaming the directory.
+<a name="Code Block 5"></a>Code Block 5: Copying HSL source files into the ~/Ipopt/ThirdParty/HSL directory, and renaming the directory.
 ~~~
 # Copy coinhsl-2015.06.23.tar.gz from the download directory to the home directory
 $ cd ~
@@ -105,7 +105,7 @@ $ rm coinhsl-2015.06.23.tar.gz
 ~~~
 Note: Download link for *coinhsl-2015.06.23.tar.gz* is provided by the HSL team upon their approval of the personal licence request.
 
-Code Block 6: Unzipping JModelica.org.
+<a name="Code Block 6"></a>Code Block 6: Unzipping JModelica.org.
 ~~~
 $ cd ~
 $ unzip JModelica.org-master.zip
@@ -113,7 +113,7 @@ $ rm JModelica.org-master.zip
 $ mv JModelica.org-master JModelica.org
 ~~~
 
-Code Block 7: checking out JModelica.org and Assimulo source files from the subversion repository at the time this testbed was developed.
+<a name="Code Block 7"></a>Code Block 7: checking out JModelica.org and Assimulo source files from the subversion repository at the time this testbed was developed.
 ~~~
 $ cd ~
 $ svn co https://svn.jmodelica.org/trunk JModelica.org
@@ -121,9 +121,9 @@ $ cd ~/JModelica.org/external
 $ svn co https://svn.jmodelica.org/assimulo/trunk Assimulo
 ~~~
 
-**6.** Install Ipopt using the command lines shown in Code Block 8.
+**6.** Install Ipopt using the command lines shown in [Code Block 8](#Code Block 8).
 
-Code Block 8: Ipopt installation.
+<a name="Code Block 8"></a>Code Block 8: Ipopt installation.
 ~~~
 $ sudo mkdir /opt/Ipopt
 $ mkdir ~/Ipopt/build
@@ -132,9 +132,9 @@ $ ../configure --prefix=/opt/Ipopt
 $ sudo make install
 ~~~
 
-**7.** Install JModelica.org using the command lines shown in Code Block 9.
+**7.** Install JModelica.org using the command lines shown in [Code Block 9](#Code Block 9).
 
-Code Block 9: JModelica.org installation.
+<a name="Code Block 9"></a>Code Block 9: JModelica.org installation.
 ~~~
 # Copy JModelica.org source files from the download directory to the home directory
 $ sudo mkdir /opt/JModelica.org
@@ -146,9 +146,9 @@ $ sudo make casadi_interface
 ~~~
 Note: Download link for *JModelica.org* source files with Assimulo source files included in JModelica.org/external/Assimulo are provided by the JModelica.org team upon their approval of the JModelica.org 2.1 (r10720) public open source version request.
 
-**8.** Setup the JModelica.org environment variable using the command lines shown in Code Block 10.
+**8.** Setup the JModelica.org environment variable using the command lines shown in [Code Block 10](#Code Block 10).
 
-Code Block 10: Setup the JModelica.org environment variable.
+<a name="Code Block 10"></a>Code Block 10: Setup the JModelica.org environment variable.
 ~~~
 $ sudo gedit /etc/environment
 
@@ -161,9 +161,9 @@ $ echo $JMODELICA_HOME
 ~~~
 Note: Add the environment variable without the hashtag. echo $JMODELICA_HOME should return the JMODELICA_HOME directory path.
 
-**9.** Import and run the examples built-in JModelica.org to test the installation using the command lines shown in Code Block 11.
+**9.** Import and run the examples built-in JModelica.org to test the installation using the command lines shown in [Code Block 11](#Code Block 11).
 
-Code Block 11: Testing JModelica.org.
+<a name="Code Block 11"></a>Code Block 11: Testing JModelica.org.
 ~~~
 $ $JMODELICA_HOME/bin/jm_ipython.sh
 $ mkdir ~/TestingJModelica
@@ -192,9 +192,9 @@ The installation of MultizoneVAV requires the installation of *Modelica Standard
 
 **10.** Download *Buildings-v5.0.1.zip* from the all releases of the MBL webpage at <https://simulationresearch.lbl.gov/modelica/downloads/archive/modelica-buildings.html>.
 
-**11.** Copy *Buildings-v5.0.1.zip* to the home directory and install MBL using the command lines shown in Code Block 12. The original procedure to install MBL is provided at <https://simulationresearch.lbl.gov/modelica/installLibrary.html>.
+**11.** Copy *Buildings-v5.0.1.zip* to the home directory and install MBL using the command lines shown in [Code Block 12](#Code Block 12). The original procedure to install MBL is provided at <https://simulationresearch.lbl.gov/modelica/installLibrary.html>.
 
-Code Block 12: Installation of MBL.
+<a name="Code Block 12"></a>Code Block 12: Installation of MBL.
 ~~~
 $ cd ~
 $ unzip Buildings-v5.0.1.zip
@@ -205,9 +205,9 @@ $ sudo mv ~/Buildings\ 5.0.1 /usr/local/Modelica/Library/Buildings_5.0.1
 
 **12.** Download *MultizoneVAV-master.zip* from the code button (download ZIP) provided in this repository webpage at <https://github.com/sAbdelhaleem/MultizoneVAV>.
 
-**13.** Copy *MultizoneVAV-master.zip* to the home directory and install MultizoneVAV using the command lines shown in Code Block 13.
+**13.** Copy *MultizoneVAV-master.zip* to the home directory and install MultizoneVAV using the command lines shown in [Code Block 13](#Code Block 13).
 
-Code Block 13: Installation of MultizoneVAV.
+<a name="Code Block 13"></a>Code Block 13: Installation of MultizoneVAV.
 ~~~
 $ cd ~
 $ unzip MultizoneVAV-master.zip
@@ -216,9 +216,9 @@ $ mv MultizoneVAV-master MultizoneVAV_0.1.0
 $ sudo mv ~/MultizoneVAV_0.1.0 /usr/local/Modelica/Library
 ~~~
 
-**14.** Setup the MSL, MBL, and MultizoneVAV environmental variables using the command lines shown in Code Block 14.
+**14.** Setup the MSL, MBL, and MultizoneVAV environmental variables using the command lines shown in [Code Block 14](#Code Block 14).
 
-Code Block 14: Setup the MSL, MBL, and MultizoneVAV environmental variables.
+<a name="Code Block 14"></a>Code Block 14: Setup the MSL, MBL, and MultizoneVAV environmental variables.
 ~~~
 $ sudo gedit /etc/environment
 
@@ -233,16 +233,16 @@ $ echo $MODELICAPATH
 ~~~
 Note: Add the environment variable without the hashtag. As noted earlier, Modelica Standard Library 3.2.2 is installed with JModelica.org source files, thus, MSL directory path is located within the JModelica.org directory. echo $MODELICAPATH should return the MODELICAPATH directory paths.
 
-**15.** Install pandas for data manipulation and analysis using the command line shown in Code Block 15, with the specific package version. pandas is not a prerequisite to install MultizoneVAV, however, it is used below to work with time series data.
+**15.** Install pandas for data manipulation and analysis using the command line shown in [Code Block 15](#Code Block 15), with the specific package version. pandas is not a prerequisite to install MultizoneVAV, however, it is used below to work with time series data.
 
-Code Block 15: Installing pandas.
+<a name="Code Block 15"></a>Code Block 15: Installing pandas.
 ~~~
 pip install 'pandas==0.23.4'
 ~~~
 
-**16.** Simulate MultizoneVAV example to test the installation using the command lines shown in Code Block 16 to test the installation.
+**16.** Simulate MultizoneVAV example to test the installation using the command lines shown in [Code Block 16](#Code Block 16) to test the installation.
 
-Code Block 16: Testing MultizoneVAV.
+<a name="Code Block 16"></a>Code Block 16: Testing MultizoneVAV.
 ~~~
 $ $JMODELICA_HOME/bin/jm_ipython.sh
 
