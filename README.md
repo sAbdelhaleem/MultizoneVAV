@@ -5,22 +5,22 @@ The testbed was developed to evaluate issues related to system design and contro
 
 The multiple zone VAV system model was programmed with ASHRAE Guideline 36 (G36) – High-Performance Sequences of Operation for HVAC Systems, which describes advanced sequences of operation for common HVAC systems [[4]](#4). A two-zone model was developed and then coupled to a software implementation of G36 sequences of operation applicable to the building. The building thermal model was developed using technical specifications collected from a real-world typical medium office building located in State College, PA. The numbering of the zones in the real-world application (i.e., zone 406 and zone 222) was used to refer to the thermal zones in this testbed.
 
-Simulations were implemented using JModelica version 2.1 textual simulation environment compiled on an Ubuntu 16.04.4 LTS distribution. The testbed was developed using component models from the Modelica Buildings Library (MBL), which is an open-source library that contains component models that can be modified if necessary and then used to produce system models for dynamic simulation [[5]](#5). The models were built based on the structure of the OpenBuildingControl (OBC) example application for the G36 in a multiple zone VAV system [[6]](#6). The OBC project is intended to develop tools and processes for the performance evaluation, specification, deployment and verification of building control sequences. The models for the OBC example is maintained in the open-source MBL. We introduced adjustments and new models customized to the research objectives in [[1]](#1). For example, to perform model-based uncertainty quantification, we introduced new stochastic models using the open-source Modelica noise sub-library [[7]](#7) that is maintained in the Modelica Standard Library (MSL) [[8]](#8). For the detailed description of the MBL component models, before being adjusted for this testbed, the reader is referred to the model documentation in [[9]](#9).
+Simulations were implemented using JModelica.org version 2.1 textual simulation environment compiled on an Ubuntu 16.04.4 LTS distribution. The testbed was developed using component models from the Modelica Buildings Library (MBL), which is an open-source library that contains component models that can be modified if necessary and then used to produce system models for dynamic simulation [[5]](#5). The models were built based on the structure of the OpenBuildingControl (OBC) example application for the G36 in a multiple zone VAV system [[6]](#6). The OBC project is intended to develop tools and processes for the performance evaluation, specification, deployment and verification of building control sequences. The models for the OBC example is maintained in the open-source MBL. We introduced adjustments and new models customized to the research objectives in [[1]](#1). For example, to perform model-based uncertainty quantification, we introduced new stochastic models using the open-source Modelica noise sub-library [[7]](#7) that is maintained in the Modelica Standard Library (MSL) [[8]](#8). For the detailed description of the MBL component models, before being adjusted for this testbed, the reader is referred to the model documentation in [[9]](#9).
 
 If you use this testbed, we would appreciate citations to Abdel Haleem et al. [[10]](#10) which describes the development of the tesbed with the ability to simulate the influence of the uncertainty inherent in the HVAC control components (e.g. sensors and actuators) on system outputs.
 
-The organization of this README file is as follows: [Section 1](#Section1) describes a customized procedure for compiling JModelica from sources on Ubuntu; and [Section 2](#Section2) describes the installation procedure for MultizoneVAV and its dependencies on Ubuntu. If you have already installed JModelica on your operating system, you can skip Section 1. It is worth pointing out, that MultizoneVAV was installed successfully on Red Hat Enterprise Linux (RHEL) version 6, however, it was not tested on a windows operating system. In addition, MultizoneVAV was not tested with simulation environments other than JModelica, e.g., MultizoneVAV was not tested with Dymola.
+The organization of this README file is as follows: [Section 1](#Section1) describes a customized procedure for compiling JModelica.org from sources on Ubuntu; and [Section 2](#Section2) describes the installation procedure for MultizoneVAV and its dependencies on Ubuntu. If you have already installed JModelica.org on your operating system, you can skip Section 1. It is worth pointing out, that MultizoneVAV was installed successfully on Red Hat Enterprise Linux (RHEL) version 6, however, it was not tested on a windows operating system. In addition, MultizoneVAV was not tested with simulation environments other than JModelica.org, e.g., MultizoneVAV was not tested with Dymola.
 
-# <a name="Section1"></a>1. Compiling JModelica from sources on Ubuntu
-This section describes a customized procedure for compiling JModelica from sources on Ubuntu. The original installation procedure is provided in *JModelica User Manual 2.1*, however, since the time this testbed was developed JModelica.org discontinued providing direct access to the user manual. The reader may refer to the installation procedure in *JModelica User Manual 2.2* at the following [link](https://jmodelica.org/downloads/UsersGuide.pdf). It is worth pointing out that, the installation of JModelica is sensitive to the dependencies versions, i.e., the specific package version for the dependencies may be different between JModelica 2.1 and 2.2. The customized step-by-step installation procedure is assigned to one master numbering sequence (represented as **bold numbering**).
+# <a name="Section1"></a>1. Compiling JModelica.org from sources on Ubuntu
+This section describes a customized procedure for compiling JModelica.org from sources on Ubuntu. The original installation procedure is provided in *JModelica.org User Manual 2.1*. However, since the time this testbed was developed JModelica.org discontinued providing direct access to the user manual. The reader may refer to the installation procedure in *JModelica.org User Manual 2.2* at <https://jmodelica.org/downloads/UsersGuide.pdf>. It is worth pointing out that, the installation of JModelica.org is sensitive to the dependencies versions, i.e., the specific package version for the dependencies may be different between JModelica.org 2.1 and 2.2. The customized step-by-step installation procedure is assigned to one master numbering sequence (represented as **bold numbering**).
 
-**1.** Download *ubuntu-16.04.4-desktop-amd64.iso* from the old Ubuntu releases webpage at the following [link](http://old-releases.ubuntu.com/releases/xenial/).
+**1.** Download *ubuntu-16.04.4-desktop-amd64.iso* from the old Ubuntu releases webpage at <http://old-releases.ubuntu.com/releases/xenial/>.
 
 **2.** Perform a fresh installation of Ubuntu. In the installation prcedure check the radio buttons next to "download updates while installing", and "install third-party software …"
 
-**3.** Install the JModelica dependencies using the command lines shown in Code Block 1, each with the specific package version.
+**3.** Install the JModelica.org dependencies using the command lines shown in Code Block 1, each with the specific package version.
 
-Code Block 1: Installation of JModelica dependencies using specific package version.
+Code Block 1: Installation of JModelica.org dependencies using specific package version.
 ~~~
 sudo apt-get -y install python-dev=2.7.12-1~16.04
 sudo apt-get -y install python-setuptools=20.7.0-1
@@ -60,16 +60,19 @@ Note: Add the environment variable without the hashtag. echo $JAVA_HOME should r
 
 **5.** Download the main packages for the installation as listed in Table 1, each with the specific package version.
 
-**Table 1:** Procedure to download the main packages for JModelica.
-| Package  | Version | Download Link |
+**Table 1:** Procedure to download the main packages for JModelica.org.
+| Package  | Version | Download Procedure |
 | ------------- | ------------- | ------------- |
 |  Ipopt  |  3.12 (revision 2778)  |  checkout the source files from the subversion repository using the command lines in Code Block 3 |
 |  Third party dependencies for Ipopt  |  -  |  download the dependencies using the command lines shown in Code Block 4  |
-|  HSL for Ipopt <sup>a</sup>  |  coinhsl v2015.06.23  |  request personal licence from HSL at the following [link](http://www.hsl.rl.ac.uk/ipopt/)  |
-|  JModelica  |  2.1 (r10720)  |  request public open source version from JModelica.org <sup>b</sup>  |
+|  HSL for Ipopt <sup>a</sup>  |  coinhsl v2015.06.23  |  request personal licence from HSL at <http://www.hsl.rl.ac.uk/ipopt/>  |
+|  JModelica.org  |  2.1 (r10720)  |  1) download *JModelica.org-master.zip* from the code button (download ZIP) provided in my [JModelica.org redistribution repository](../../../JModelica.org) <sup>b</sup>; 2) copy *JModelica.org-master.zip* to the home directory; and 3) unzip *JModelica.org-master.zip* using the command lines in Code Block 6  |
 
 <sup>a</sup> HSL provides a number of linear solvers that can be used in Ipopt. For the reader reference, the command lines to include the HSL package in Ipopt are shown in Code Block 5, however, HSL solvers were not used to simulate this testbed.
-<sup>b</sup> At the time this testbed was developed, JModelica source files were checked out from the subversion repository. However, checking out JModelica was associated with an error during checkout of the Assimulo simulation package. This was resolved by checking out the Assimulo source files in a separate checkout command from the JModelica checkout command. This is worth being pointed out so that the reader ensures the JModelica source files supplied by JModelica.org includes Assimulo. For the reader reference, the command lines to checkout JModelica and Assimulo are shown in Code Block 6, however, since the time this testbed was developed JModelica.org discontinued providing direct access to the source files from the links in Code Block 6. It is also worth pointing out that, JModelica source files include Modelica Standard Library 3.2.2, which is a prerequisite to simulate this testbed.
+
+<sup>b</sup> This is a software repository that redistributes JModelica.org version 2.1 (r10720) without modification. It is worth pointing out that, JModelica.org source files include Modelica Standard Library 3.2.2, which is a prerequisite to simulate this testbed.
+
+As an alternative to downloading *JModelica.org-master.zip* from my [JModelica.org redistribution repository](../../../JModelica.org), the user may request a public open source version from <https://jmodelica.org/>. At the time this testbed was developed, JModelica.org source files were checked out from the subversion repository. However, checking out JModelica.org was associated with an error during checkout of the Assimulo simulation package. This was resolved by checking out the Assimulo source files in a separate checkout command from the JModelica.org checkout command. This is worth being pointed out so that the reader ensures the JModelica.org source files supplied by JModelica.org includes Assimulo. For the reader reference, the command lines to checkout JModelica.org and Assimulo are shown in Code Block 7. However, since the time this testbed was developed, JModelica.org discontinued providing direct access to the source files from the links in Code Block 7. 
 
 Code Block 3: checking out Ipopt source files from the subversion repository.
 ~~~
@@ -102,17 +105,25 @@ $ rm coinhsl-2015.06.23.tar.gz
 ~~~
 Note: Download link for *coinhsl-2015.06.23.tar.gz* is provided by the HSL team upon their approval of the personal licence request.
 
-Code Block 6: checking out JModelica and Assimulo source files from the subversion repository at the time this testbed was developed.
+Code Block 6: Unzipping JModelica.org.
 ~~~
 $ cd ~
-$ svn co https://svn.jmodelica.org/trunk JModelica
-$ cd ~/JModelica/external
+$ unzip JModelica.org-master.zip
+$ rm JModelica.org-master.zip
+$ mv JModelica.org-master JModelica.org
+~~~
+
+Code Block 7: checking out JModelica.org and Assimulo source files from the subversion repository at the time this testbed was developed.
+~~~
+$ cd ~
+$ svn co https://svn.jmodelica.org/trunk JModelica.org
+$ cd ~/JModelica.org/external
 $ svn co https://svn.jmodelica.org/assimulo/trunk Assimulo
 ~~~
 
-**6.** Install Ipopt using the command lines shown in Code Block 7.
+**6.** Install Ipopt using the command lines shown in Code Block 8.
 
-Code Block 7: Ipopt installation.
+Code Block 8: Ipopt installation.
 ~~~
 $ sudo mkdir /opt/Ipopt
 $ mkdir ~/Ipopt/build
@@ -121,28 +132,28 @@ $ ../configure --prefix=/opt/Ipopt
 $ sudo make install
 ~~~
 
-**7.** Install JModelica using the command lines shown in Code Block 8.
+**7.** Install JModelica.org using the command lines shown in Code Block 9.
 
-Code Block 8: JModelica installation.
+Code Block 9: JModelica.org installation.
 ~~~
-# Copy JModelica source files from the download directory to the home directory
-$ sudo mkdir /opt/JModelica
-$ mkdir ~/JModelica/build
-$ cd ~/JModelica/build
-$ ../configure --prefix=/opt/JModelica --with-ipopt=/opt/Ipopt
+# Copy JModelica.org source files from the download directory to the home directory
+$ sudo mkdir /opt/JModelica.org
+$ mkdir ~/JModelica.org/build
+$ cd ~/JModelica.org/build
+$ ../configure --prefix=/opt/JModelica.org --with-ipopt=/opt/Ipopt
 $ sudo make install
 $ sudo make casadi_interface
 ~~~
-Note: Download link for *JModelica* source files with Assimulo source files included in JModelica/external/Assimulo are provided by the JModelica team upon their approval of the JModelica 2.1 (r10720) public open source version request.
+Note: Download link for *JModelica.org* source files with Assimulo source files included in JModelica.org/external/Assimulo are provided by the JModelica.org team upon their approval of the JModelica.org 2.1 (r10720) public open source version request.
 
-**8.** Setup the JModelica environment variable using the command lines shown in Code Block 9.
+**8.** Setup the JModelica.org environment variable using the command lines shown in Code Block 10.
 
-Code Block 9: Setup the JModelica environment variable.
+Code Block 10: Setup the JModelica.org environment variable.
 ~~~
 $ sudo gedit /etc/environment
 
 # On a new line in the /etc/environment file, add the following
-# JMODELICA_HOME="/opt/JModelica"
+# JMODELICA_HOME="/opt/JModelica.org"
 # Press the save button and close the file
 
 $ source /etc/environment
@@ -150,9 +161,9 @@ $ echo $JMODELICA_HOME
 ~~~
 Note: Add the environment variable without the hashtag. echo $JMODELICA_HOME should return the JMODELICA_HOME directory path.
 
-**9.** Import and run the examples built-in JModelica to test the installation using the command lines shown in Code Block 10.
+**9.** Import and run the examples built-in JModelica.org to test the installation using the command lines shown in Code Block 11.
 
-Code Block 10: Testing JModelica.
+Code Block 11: Testing JModelica.org.
 ~~~
 $ $JMODELICA_HOME/bin/jm_ipython.sh
 $ mkdir ~/TestingJModelica
@@ -177,13 +188,13 @@ $ rm -r ~/TestingJModelica
 Note: The simulation will plot the results in separate pop-up windows, close the window for the simulation to continue.
 
 # <a name="Section2"></a>2. Installation of MultizoneVAV
-The installation of MultizoneVAV requires the installation of *Modelica Standard Library 3.2.2* , which is included with JModelica source files as discussed above, and *Modelica Buildings Library 5.0.1*. The step-by-step installation of MultizoneVAV and its dependencies continues the master numbering sequence presented in [Section 1](#Section1) (represented as **bold numbering**).
+The installation of MultizoneVAV requires the installation of *Modelica Standard Library 3.2.2* , which is included with JModelica.org source files as discussed above, and *Modelica Buildings Library 5.0.1*. The step-by-step installation of MultizoneVAV and its dependencies continues the master numbering sequence presented in [Section 1](#Section1) (represented as **bold numbering**).
 
-**10.** Download *Buildings-v5.0.1.zip* from the all releases of the MBL webpage at the following [link](https://simulationresearch.lbl.gov/modelica/downloads/archive/modelica-buildings.html).
+**10.** Download *Buildings-v5.0.1.zip* from the all releases of the MBL webpage at <https://simulationresearch.lbl.gov/modelica/downloads/archive/modelica-buildings.html>.
 
-**11.** Copy *Buildings-v5.0.1.zip* to the home directory and install MBL using the command lines shown in Code Block 11. The original procedure to install MBL is provided at the following [link](https://simulationresearch.lbl.gov/modelica/installLibrary.html).
+**11.** Copy *Buildings-v5.0.1.zip* to the home directory and install MBL using the command lines shown in Code Block 12. The original procedure to install MBL is provided at <https://simulationresearch.lbl.gov/modelica/installLibrary.html>.
 
-Code Block 11: Installation of MBL.
+Code Block 12: Installation of MBL.
 ~~~
 $ cd ~
 $ unzip Buildings-v5.0.1.zip
@@ -192,11 +203,11 @@ $ sudo mkdir -p /usr/local/Modelica/Library/Buildings_5.0.1
 $ sudo mv ~/Buildings\ 5.0.1 /usr/local/Modelica/Library/Buildings_5.0.1
 ~~~
 
-**12.** Download *MultizoneVAV-master.zip* from the code button, download ZIP provided in this repository webpage at the following [link](https://github.com/sAbdelhaleem/MultizoneVAV).
+**12.** Download *MultizoneVAV-master.zip* from the code button (download ZIP) provided in this repository webpage at <https://github.com/sAbdelhaleem/MultizoneVAV>.
 
-**13.** Copy *MultizoneVAV-master.zip* to the home directory and install MultizoneVAV using the command lines shown in Code Block 12.
+**13.** Copy *MultizoneVAV-master.zip* to the home directory and install MultizoneVAV using the command lines shown in Code Block 13.
 
-Code Block 12: Installation of MultizoneVAV.
+Code Block 13: Installation of MultizoneVAV.
 ~~~
 $ cd ~
 $ unzip MultizoneVAV-master.zip
@@ -205,14 +216,14 @@ $ mv MultizoneVAV-master MultizoneVAV_0.1.0
 $ sudo mv ~/MultizoneVAV_0.1.0 /usr/local/Modelica/Library
 ~~~
 
-**14.** Setup the MSL, MBL, and MultizoneVAV environmental variables using the command lines shown in Code Block 13.
+**14.** Setup the MSL, MBL, and MultizoneVAV environmental variables using the command lines shown in Code Block 14.
 
-Code Block 13: Setup the MSL, MBL, and MultizoneVAV environmental variables.
+Code Block 14: Setup the MSL, MBL, and MultizoneVAV environmental variables.
 ~~~
 $ sudo gedit /etc/environment
 
 # On a new line in the /etc/environment file, add the following
-# MODELICAPATH="/opt/JModelica/ThirdParty/MSL:/usr/local/Modelica/Library/Buildings_5.0.1:/usr/local/Modelica/Library/MultizoneVAV_0.1.0"
+# MODELICAPATH="/opt/JModelica.org/ThirdParty/MSL:/usr/local/Modelica/Library/Buildings_5.0.1:/usr/local/Modelica/Library/MultizoneVAV_0.1.0"
 # Press the save button and close the file
 
 $ source /etc/environment
@@ -220,18 +231,18 @@ $ echo $MODELICAPATH
 
 # Restart the computer
 ~~~
-Note: Add the environment variable without the hashtag. As noted earlier, Modelica Standard Library 3.2.2 is installed with JModelica source files, thus, MSL directory path is located within the JModelica directory. echo $MODELICAPATH should return the MODELICAPATH directory paths.
+Note: Add the environment variable without the hashtag. As noted earlier, Modelica Standard Library 3.2.2 is installed with JModelica.org source files, thus, MSL directory path is located within the JModelica.org directory. echo $MODELICAPATH should return the MODELICAPATH directory paths.
 
-**15.** Install pandas for data manipulation and analysis using the command line shown in Code Block 14, with the specific package version. pandas is not a prerequisite to install MultizoneVAV, however, it is used below to work with time series data.
+**15.** Install pandas for data manipulation and analysis using the command line shown in Code Block 15, with the specific package version. pandas is not a prerequisite to install MultizoneVAV, however, it is used below to work with time series data.
 
-Code Block 14: Installing pandas.
+Code Block 15: Installing pandas.
 ~~~
 pip install 'pandas==0.23.4'
 ~~~
 
-**16.** Simulate MultizoneVAV example to test the installation using the command lines shown in Code Block 15 to test the installation.
+**16.** Simulate MultizoneVAV example to test the installation using the command lines shown in Code Block 16 to test the installation.
 
-Code Block 15: Testing MultizoneVAV.
+Code Block 16: Testing MultizoneVAV.
 ~~~
 $ $JMODELICA_HOME/bin/jm_ipython.sh
 
