@@ -66,13 +66,13 @@ Note: Add the environment variable without the hashtag. echo $JAVA_HOME should r
 |  Ipopt  |  3.12 (revision 2778)  |  checkout the source files from the subversion repository using the command lines in [Code Block 3](#CodeBlock3) |
 |  Third party dependencies for Ipopt  |  -  |  download the dependencies using the command lines shown in [Code Block 4](#CodeBlock4)  |
 |  HSL for Ipopt <sup>a</sup>  |  coinhsl v2015.06.23  |  request personal licence from HSL at <http://www.hsl.rl.ac.uk/ipopt/>  |
-|  JModelica.org  |  2.1 (r10720)  |  1) download *JModelica.org-master.zip* from the code button (download ZIP) provided in my [JModelica.org redistribution repository](../../../JModelica.org) <sup>b</sup>; 2) copy *JModelica.org-master.zip* to the home directory; and 3) unzip *JModelica.org-master.zip* using the command lines in [Code Block 6](#CodeBlock6)  |
+|  JModelica.org  |  2.1 (r10720)  |  1) download *JModelica.org-master.zip* from the code button (download ZIP) provided in the [JModelica.org redistribution repository](../../../JModelica.org) <sup>b</sup>; 2) copy *JModelica.org-master.zip* to the home directory; and 3) unzip *JModelica.org-master.zip* using the command lines in [Code Block 6](#CodeBlock6)  |
 
 <sup>a</sup> HSL provides a number of linear solvers that can be used in Ipopt. For the reader reference, the command lines to include the HSL package in Ipopt are shown in [Code Block 5](#CodeBlock5), however, HSL solvers were not used to simulate this testbed.
 
 <sup>b</sup> This is a software repository that redistributes JModelica.org version 2.1 (r10720) without modification. It is worth pointing out that, JModelica.org source files include Modelica Standard Library 3.2.2, which is a prerequisite to simulate this testbed.
 
-As an alternative to downloading *JModelica.org-master.zip* from my [JModelica.org redistribution repository](../../../JModelica.org), the user may request a public open source version from <https://jmodelica.org/>. At the time this testbed was developed, JModelica.org source files were checked out from the subversion repository. However, checking out JModelica.org was associated with an error during checkout of the Assimulo simulation package. This was resolved by checking out the Assimulo source files in a separate checkout command from the JModelica.org checkout command. This is worth being pointed out so that the reader ensures the JModelica.org source files supplied by JModelica.org includes Assimulo. For the reader reference, the command lines to checkout JModelica.org and Assimulo are shown in [Code Block 7](#CodeBlock7). However, since the time this testbed was developed, JModelica.org discontinued providing direct access to the source files from the links in [Code Block 7](#CodeBlock7).
+As an alternative to downloading *JModelica.org-master.zip* from the [JModelica.org redistribution repository](../../../JModelica.org), the user may request a public open source version from <https://jmodelica.org/>. At the time this testbed was developed, JModelica.org source files were checked out from the subversion repository. However, checking out JModelica.org was associated with an error during checkout of the Assimulo simulation package. This was resolved by checking out the Assimulo source files in a separate checkout command from the JModelica.org checkout command. This is worth being pointed out so that the reader ensures the JModelica.org source files supplied by JModelica.org includes Assimulo. For the reader reference, the command lines to checkout JModelica.org and Assimulo are shown in [Code Block 7](#CodeBlock7). However, since the time this testbed was developed, JModelica.org discontinued providing direct access to the source files from the links in [Code Block 7](#CodeBlock7).
 
 <a name="CodeBlock3"></a>Code Block 3: checking out Ipopt source files from the subversion repository.
 ~~~
@@ -120,6 +120,7 @@ $ svn co https://svn.jmodelica.org/trunk JModelica.org
 $ cd ~/JModelica.org/external
 $ svn co https://svn.jmodelica.org/assimulo/trunk Assimulo
 ~~~
+Note: JModelica.org discontinued providing direct access to the source files from the links.
 
 **6.** Install Ipopt using the command lines shown in [Code Block 8](#CodeBlock8).
 
