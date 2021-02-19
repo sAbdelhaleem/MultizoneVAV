@@ -66,7 +66,7 @@ Note: Add the environment variable without the hashtag. echo $JAVA_HOME should r
 |  Ipopt  |  3.12 (revision 2778)  |  checkout the source files from the subversion repository using the command lines in [Code Block 3](#CodeBlock3) |
 |  Third party dependencies for Ipopt  |  -  |  download the dependencies using the command lines shown in [Code Block 4](#CodeBlock4)  |
 |  HSL for Ipopt <sup>a</sup>  |  coinhsl v2015.06.23  |  request personal licence from HSL at <http://www.hsl.rl.ac.uk/ipopt/>  |
-|  JModelica.org  |  2.1 (r10720)  |  1) download *JModelica.org-master.zip* from the code button (download ZIP) provided in the [JModelica.org redistribution repository](../../../JModelica.org) <sup>b</sup>; 2) copy *JModelica.org-master.zip* to the home directory; and 3) unzip *JModelica.org-master.zip* using the command lines in [Code Block 6](#CodeBlock6)  |
+|  JModelica.org  |  2.1 (r10720)  |  1) at the [JModelica.org redistribution repository](../../../JModelica.org) webpage, press the *green code button* then press *download ZIP* from the drop-down menu to download *JModelica.org-master.zip* <sup>b</sup>; 2) copy *JModelica.org-master.zip* to the home directory; and 3) unzip *JModelica.org-master.zip* using the command lines in [Code Block 6](#CodeBlock6)  |
 
 <sup>a</sup> HSL provides a number of linear solvers that can be used in Ipopt. For the reader reference, the command lines to include the HSL package in Ipopt are shown in [Code Block 5](#CodeBlock5), however, HSL solvers were not used to simulate this testbed.
 
@@ -137,7 +137,6 @@ $ sudo make install
 
 <a name="CodeBlock9"></a>Code Block 9: JModelica.org installation.
 ~~~
-# Copy JModelica.org source files from the download directory to the home directory
 $ sudo mkdir /opt/JModelica.org
 $ mkdir ~/JModelica.org/build
 $ cd ~/JModelica.org/build
@@ -145,7 +144,7 @@ $ ../configure --prefix=/opt/JModelica.org --with-ipopt=/opt/Ipopt
 $ sudo make install
 $ sudo make casadi_interface
 ~~~
-Note: Download link for *JModelica.org* source files with Assimulo source files included in JModelica.org/external/Assimulo are provided by the JModelica.org team upon their approval of the JModelica.org 2.1 (r10720) public open source version request.
+Note: If *JModelica.org* source files are provided by the JModelica.org team and not downloaded from the [JModelica.org redistribution repository](../../../JModelica.org) webpage, copy JModelica.org source files from the download directory to the home directory. It is worth pointing out that, *JModelica.org* source files shall be provided by the JModelica.org team upon their approval of the JModelica.org 2.1 (r10720) public open source version request, and shall include Assimulo source files in JModelica.org/external/Assimulo
 
 **8.** Setup the JModelica.org environment variable using the command lines shown in [Code Block 10](#CodeBlock10).
 
@@ -204,7 +203,7 @@ $ sudo mkdir -p /usr/local/Modelica/Library/Buildings_5.0.1
 $ sudo mv ~/Buildings\ 5.0.1 /usr/local/Modelica/Library/Buildings_5.0.1
 ~~~
 
-**12.** Download *MultizoneVAV-master.zip* from the code button (download ZIP) provided in this repository webpage at <https://github.com/sAbdelhaleem/MultizoneVAV>.
+**12.** At the MultizoneVAV repository webpage at <https://github.com/sAbdelhaleem/MultizoneVAV>, press the *green code button* then press *download ZIP* from the drop-down menu to download *MultizoneVAV-master.zip*
 
 **13.** Copy *MultizoneVAV-master.zip* to the home directory and install MultizoneVAV using the command lines shown in [Code Block 13](#CodeBlock13).
 
