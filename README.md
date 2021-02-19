@@ -144,7 +144,7 @@ $ ../configure --prefix=/opt/JModelica.org --with-ipopt=/opt/Ipopt
 $ sudo make install
 $ sudo make casadi_interface
 ~~~
-Note: If *JModelica.org* source files are provided by the JModelica.org team and not downloaded from the [JModelica.org redistribution repository](../../../JModelica.org) webpage, copy JModelica.org source files from the download directory to the home directory. It is worth pointing out that, *JModelica.org* source files shall be provided by the JModelica.org team upon their approval of the JModelica.org 2.1 (r10720) public open source version request, and shall include Assimulo source files in JModelica.org/external/Assimulo
+Note: If *JModelica.org* source files are provided by the JModelica.org team and not downloaded from the [JModelica.org redistribution repository](../../../JModelica.org) webpage, copy JModelica.org source files from the download directory to the home directory. It is worth pointing out that, *JModelica.org* source files shall be provided by the JModelica.org team upon their approval of the JModelica.org 2.1 (r10720) public open source version request, and shall include Assimulo source files in ~/JModelica.org/external/Assimulo
 
 **8.** Setup the JModelica.org environment variable using the command lines shown in [Code Block 10](#CodeBlock10).
 
