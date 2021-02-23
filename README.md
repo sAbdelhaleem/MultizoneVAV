@@ -270,13 +270,14 @@ $ $JMODELICA_HOME/bin/jm_ipython.sh
 $ mkdir ~/ReproduceChallengesMultizoneVAV
 $ cd ~/ReproduceChallengesMultizoneVAV
 
-# Reproduce airflow chattering (Challenge 2 in [[10]](#10))
+# Reproduce airflow chattering
 $ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36_AirflowChattering.py
 
 $ exit
 $ cd ~
 $ rm -r ~/ReproduceChallengesMultizoneVAV
 ~~~
+Note: The airflow chattering is discussed in Challenge 2 in [[10]](#10)
 
 # References
 <a name="1"></a>[1]	S. M. Abdel Haleem, "Impact of Component Uncertainty and Control Loop on Performance in HVAC Systems with Advanced Sequences of Operation," Doctor of Philosophy, Architectural Engineering, The Pennsylvania State University, 2020. Accessed: Jan 08, 2021. [Online]. Available: https://etda.libraries.psu.edu/catalog/17584sma282.
