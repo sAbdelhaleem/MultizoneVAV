@@ -259,7 +259,7 @@ $ exit
 $ cd ~
 $ rm -r ~/TestingMultizoneVAV
 ~~~
-Note: This will simulate the MultizoneVAV system for one hour during Jan 8 from 7:00 AM to 8:00 AM.
+Note: The MultizoneVAV system will be simulated during Jan 8 from 7:00 AM to 8:00 AM in the stochastic example, and during Jan 8 from midnight to noon in the deterministic example.
 
 # References
 <a name="1"></a>[1]	S. M. Abdel Haleem, "Impact of Component Uncertainty and Control Loop on Performance in HVAC Systems with Advanced Sequences of Operation," Doctor of Philosophy, Architectural Engineering, The Pennsylvania State University, 2020. Accessed: Jan 08, 2021. [Online]. Available: https://etda.libraries.psu.edu/catalog/17584sma282.
