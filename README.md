@@ -267,15 +267,15 @@ Note: The MultizoneVAV system will be simulated during Jan 8 from 7:00 AM to 8:0
 ~~~
 $ $JMODELICA_HOME/bin/jm_ipython.sh
 
-$ mkdir ~/TestingMultizoneVAV
-$ cd ~/TestingMultizoneVAV
+$ mkdir ~/ReproduceChallengesMultizoneVAV
+$ cd ~/ReproduceChallengesMultizoneVAV
 
-# Reproduce airflow chattering
+# Reproduce airflow chattering (Challenge 2 in [[10]](#10))
 $ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36_AirflowChattering.py
 
 $ exit
 $ cd ~
-$ rm -r ~/TestingMultizoneVAV
+$ rm -r ~/ReproduceChallengesMultizoneVAV
 ~~~
 
 # References
