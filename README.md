@@ -249,7 +249,11 @@ $ $JMODELICA_HOME/bin/jm_ipython.sh
 $ mkdir ~/TestingMultizoneVAV
 $ cd ~/TestingMultizoneVAV
 
+# Simulate the MultizoneVAV example with stochastic effects in the sensors and actuators
 $ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36.py
+
+# Simulate the MultizoneVAV example with deterministic sensors and actuators
+$ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36_deterministic.py
 
 $ exit
 $ cd ~
