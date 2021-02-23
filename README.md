@@ -250,7 +250,7 @@ $ mkdir ~/TestingMultizoneVAV
 $ cd ~/TestingMultizoneVAV
 
 # Simulate the MultizoneVAV example with stochastic effects in the sensors and actuators
-$ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36.py
+$ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36_AirflowChattering.py
 
 # Simulate the MultizoneVAV example with deterministic sensors and actuators
 $ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36_deterministic.py
@@ -260,6 +260,23 @@ $ cd ~
 $ rm -r ~/TestingMultizoneVAV
 ~~~
 Note: The MultizoneVAV system will be simulated during Jan 8 from 7:00 AM to 8:00 AM in the stochastic example, and during Jan 8 from midnight to noon in the deterministic example.
+
+**17.** Reproduce different challenges that were encountered during the development of the testbed using the command lines shown in [Code Block 17](#CodeBlock17).
+
+<a name="CodeBlock17"></a>Code Block 17: Reproduce challenges.
+~~~
+$ $JMODELICA_HOME/bin/jm_ipython.sh
+
+$ mkdir ~/TestingMultizoneVAV
+$ cd ~/TestingMultizoneVAV
+
+# Reproduce airflow chattering
+$ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36_AirflowChattering.py
+
+$ exit
+$ cd ~
+$ rm -r ~/TestingMultizoneVAV
+~~~
 
 # References
 <a name="1"></a>[1]	S. M. Abdel Haleem, "Impact of Component Uncertainty and Control Loop on Performance in HVAC Systems with Advanced Sequences of Operation," Doctor of Philosophy, Architectural Engineering, The Pennsylvania State University, 2020. Accessed: Jan 08, 2021. [Online]. Available: https://etda.libraries.psu.edu/catalog/17584sma282.
