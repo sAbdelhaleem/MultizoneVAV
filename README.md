@@ -273,14 +273,14 @@ $ cd ~/ReproduceChallengesMultizoneVAV
 # Reproduce airflow chattering
 $ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36_AirflowChattering.py
 
-# Reproduce boolean switch performance when noise signals are used to trigger its conditional expression
+# Reproduce boolean switch performance when stochastic signals are used to trigger the conditional expression
 $ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36_BooleanSwitchSmoothing.py
 
 $ exit
 $ cd ~
 $ rm -r ~/ReproduceChallengesMultizoneVAV
 ~~~
-Note: The challenges are discussed in [[10]](#10) in the following challenge number: 1) the airflow chattering is discussed in Challenge 2, and 2) the boolean switch performance is discussed in Challenge 11.
+Note: The challenges are discussed in [[10]](#10) under the following Challenge numbers: 1) the airflow chattering is discussed in Challenge 2, and 2) the boolean switch performance is discussed in Challenge 11.
 
 # References
 <a name="1"></a>[1]	S. M. Abdel Haleem, "Impact of Component Uncertainty and Control Loop on Performance in HVAC Systems with Advanced Sequences of Operation," Doctor of Philosophy, Architectural Engineering, The Pennsylvania State University, 2020. Accessed: Jan 08, 2021. [Online]. Available: https://etda.libraries.psu.edu/catalog/17584sma282.
