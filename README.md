@@ -58,9 +58,9 @@ $ echo $JAVA_HOME
 ~~~
 Note: Add the environment variable without the hashtag. echo $JAVA_HOME should return the Java directory path.
 
-**5.** Download the main packages for the installation as listed in Table 1, each with the specific package version.
+**5.** Download the main packages for the installation as listed in [Table 1](#Table1), each with the specific package version.
 
-**Table 1:** Procedure to download the main packages for JModelica.org.
+<a name="Table1"></a>**Table 1:** Procedure to download the main packages for JModelica.org.
 | Package  | Version | Download Procedure |
 | ------------- | ------------- | ------------- |
 |  Ipopt  |  3.12 (revision 2778)  |  checkout the source files from the subversion repository using the command lines in [Code Block 3](#CodeBlock3) |
@@ -188,11 +188,11 @@ $ rm -r ~/TestingJModelica
 Note: The simulation will plot the results in separate pop-up windows, close the window for the simulation to continue.
 
 # <a name="Section2"></a>2. Installation of MultizoneVAV
-The installation of MultizoneVAV requires the installation of *Modelica Standard Library 3.2.2* , which is included with JModelica.org source files as discussed above, and *Modelica Buildings Library 5.0.1*. The step-by-step installation of MultizoneVAV and its dependencies continues the master numbering sequence presented in [Section 1](#Section1) (represented as **bold numbering**).
+The installation of MultizoneVAV requires the installation of *Modelica Standard Library 3.2.2*, which is included with JModelica.org source files as discussed above, and *Modelica Buildings Library 5.0.1*. The step-by-step installation procedure of the MultizoneVAV testbed and its dependencies is continued from the master numbering sequence presented above in [Section 1](#Section1) (represented as **bold numbering**).
 
 **10.** Download *Buildings-v5.0.1.zip* from the all releases of the MBL webpage at <https://simulationresearch.lbl.gov/modelica/downloads/archive/modelica-buildings.html>.
 
-**11.** Copy *Buildings-v5.0.1.zip* to the home directory and install MBL using the command lines shown in [Code Block 12](#CodeBlock12). The original procedure to install MBL is provided at <https://simulationresearch.lbl.gov/modelica/installLibrary.html>.
+**11.** Copy *Buildings-v5.0.1.zip* to the home directory and install the MBL using the command lines shown in [Code Block 12](#CodeBlock12). The original procedure to install MBL is provided at <https://simulationresearch.lbl.gov/modelica/installLibrary.html>.
 
 <a name="CodeBlock12"></a>Code Block 12: Installation of MBL.
 ~~~
@@ -205,7 +205,7 @@ $ sudo mv ~/Buildings\ 5.0.1 /usr/local/Modelica/Library/Buildings_5.0.1
 
 **12.** From the MultizoneVAV repository webpage at <https://github.com/sAbdelhaleem/MultizoneVAV>, press the *green code button* then press *download ZIP* from the drop-down menu to download *MultizoneVAV-master.zip*
 
-**13.** Copy *MultizoneVAV-master.zip* to the home directory and install MultizoneVAV using the command lines shown in [Code Block 13](#CodeBlock13).
+**13.** Copy *MultizoneVAV-master.zip* to the home directory and install the MultizoneVAV testbed using the command lines shown in [Code Block 13](#CodeBlock13).
 
 <a name="CodeBlock13"></a>Code Block 13: Installation of MultizoneVAV.
 ~~~
@@ -240,7 +240,7 @@ Note: Add the environment variable without the hashtag. As noted earlier, Modeli
 pip install 'pandas==0.23.4'
 ~~~
 
-**16.** Simulate MultizoneVAV example to test the installation using the command lines shown in [Code Block 16](#CodeBlock16) to test the installation.
+**16.** Simulate MultizoneVAV example to test the installation using the command lines shown in [Code Block 16](#CodeBlock16).
 
 <a name="CodeBlock16"></a>Code Block 16: Testing MultizoneVAV.
 ~~~
@@ -250,7 +250,7 @@ $ mkdir ~/TestingMultizoneVAV
 $ cd ~/TestingMultizoneVAV
 
 # Simulate the MultizoneVAV example with stochastic effects in the sensors and actuators
-$ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36_AirflowChattering.py
+$ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36.py
 
 # Simulate the MultizoneVAV example with deterministic sensors and actuators
 $ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36_deterministic.py
