@@ -270,22 +270,22 @@ $ $JMODELICA_HOME/bin/jm_ipython.sh
 $ mkdir ~/ReproduceChallengesMultizoneVAV
 $ cd ~/ReproduceChallengesMultizoneVAV
 
-# Reproduce airflow chattering discussed in Challenge 2 in [[10]](#10)
+# Reproduce airflow chattering discussed in Challenge 2 in [10]
 $ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36_AirflowChattering.py
 
-# Reproduce simulation crash discussed in Challenge 5 in [[10]](#10)
+# Reproduce simulation crash discussed in Challenge 5 in [10]
 $ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36_SimulationCrashChallenge5.py
 
-# Reproduce simulation crash discussed in Challenge 8 in [[10]](#10)
+# Reproduce simulation crash discussed in Challenge 8 in [10]
 $ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36_SimulationCrashChallenge8.py
 
-# Reproduce the minimum outdoor air intake set-point (MinOAsp) chattering discussed in Challenge 8 in [[10]](#10)
+# Reproduce the minimum outdoor air intake set-point (MinOAsp) chattering discussed in Challenge 8 in [10]
 $ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36_MinOAspChattering.py
 
-# Reproduce simulation crash discussed in Challenge 10 in [[10]](#10)
+# Reproduce simulation crash discussed in Challenge 10 in [10]
 $ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36_SimulationCrashChallenge10.py
 
-# Reproduce Boolean switch performance when stochastic signals are used to trigger the conditional expression discussed in Challenge 11 in [[10]](#10)
+# Reproduce Boolean switch performance when stochastic signals are used to trigger the conditional expression discussed in Challenge 11 in [10]
 $ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36_BooleanSwitchSmoothing.py
 
 $ exit
@@ -293,6 +293,8 @@ $ cd ~
 $ rm -r ~/ReproduceChallengesMultizoneVAV
 ~~~
 Note: the term "simulation crash" is used to refer to an abrupt stop in the simulation with an exception to report the cause of the crash in JModelica.org runtime logging. However, although the exception in the log file provided information of the cause of the crash, the exception was not detailed enough to identify the root cause and solve the crash.
+
+Note: The challenges are discussed in [[10]](#10).
 
 # References
 <a name="1"></a>[1]	S. M. Abdel Haleem, "Impact of Component Uncertainty and Control Loop on Performance in HVAC Systems with Advanced Sequences of Operation," Doctor of Philosophy, Architectural Engineering, The Pennsylvania State University, 2020. Accessed: Jan 08, 2021. [Online]. Available: https://etda.libraries.psu.edu/catalog/17584sma282.
