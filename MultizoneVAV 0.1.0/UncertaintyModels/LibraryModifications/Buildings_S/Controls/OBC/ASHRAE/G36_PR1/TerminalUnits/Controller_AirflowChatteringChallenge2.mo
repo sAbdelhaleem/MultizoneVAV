@@ -1,5 +1,5 @@
 within MultizoneVAV.UncertaintyModels.LibraryModifications.Buildings_S.Controls.OBC.ASHRAE.G36_PR1.TerminalUnits;
-block Controller_AirflowChattering "Controller for room VAV box" // _99_01_benchmark
+block Controller_AirflowChatteringChallenge2 "Controller for room VAV box" // _99_01_benchmark
 
   constant Real conv_cfm_m3s=1./(35.3147*60);
   constant Real conv_ft_m=0.3048;
@@ -98,7 +98,7 @@ block Controller_AirflowChattering "Controller for room VAV box" // _99_01_bench
   Buildings.Controls.OBC.CDL.Interfaces.BooleanInput uWin if have_winSen
     "Window status, true if open, false if closed";
 //  MultizoneVAV.UncertaintyModels.LibraryModifications.Buildings_S.Controls.OBC.ASHRAE.G36_PR1.TerminalUnits.Reheat.SetPoints.ActiveAirFlow actAirSet( // shiyab added 190310
-  MultizoneVAV.UncertaintyModels.LibraryModifications.Buildings_S.Controls.OBC.ASHRAE.G36_PR1.TerminalUnits.Reheat.SetPoints.ActiveAirFlow_AirflowChattering actAirSet( // shiyab added 190310
+  MultizoneVAV.UncertaintyModels.LibraryModifications.Buildings_S.Controls.OBC.ASHRAE.G36_PR1.TerminalUnits.Reheat.SetPoints.ActiveAirFlow_AirflowChatteringChallenge2 actAirSet( // shiyab added 190310
     final AFlo=AFlo,
     final have_occSen=have_occSen,
     final have_winSen=have_winSen,
@@ -256,4 +256,4 @@ equation
   connect(tNexNonOcc,sysReq.tNexNonOcc);
   connect(isUnOcc.y,sysReq.isUnOcc);
 
-end Controller_AirflowChattering;
+end Controller_AirflowChatteringChallenge2;

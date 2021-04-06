@@ -271,7 +271,7 @@ $ mkdir ~/ReproduceChallengesMultizoneVAV
 $ cd ~/ReproduceChallengesMultizoneVAV
 
 # Reproduce airflow chattering discussed in Challenge 2 in [10]
-$ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36_AirflowChattering.py
+$ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36_AirflowChatteringChallenge2.py
 
 # Reproduce simulation crash discussed in Challenge 5 in [10]
 $ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36_SimulationCrashChallenge5.py
@@ -280,13 +280,13 @@ $ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulat
 $ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36_SimulationCrashChallenge8.py
 
 # Reproduce the minimum outdoor air intake set-point (MinOAsp) chattering discussed in Challenge 8 in [10]
-$ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36_MinOAspChattering.py
+$ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36_MinOAspChatteringChallenge8.py
 
 # Reproduce simulation crash discussed in Challenge 10 in [10]
 $ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36_SimulationCrashChallenge10.py
 
 # Reproduce Boolean switch performance when stochastic signals are used to trigger the conditional expression discussed in Challenge 11 in [10]
-$ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36_BooleanSwitchSmoothing.py
+$ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36_BooleanSwitchSmoothingChallenge11.py
 
 $ exit
 $ cd ~

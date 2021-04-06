@@ -1,12 +1,12 @@
 within MultizoneVAV.UncertaintyModels.VAVReheat;
-model Guideline36_AirflowChattering // _99_07_benchmarkwoTMixNoise
+model Guideline36_AirflowChatteringChallenge2 // _99_07_benchmarkwoTMixNoise
   "Variable air volume flow system with terminal reheat and two thermal zones"
   extends MultizoneVAV.UncertaintyModels.VAVReheat.BaseClasses.PartialOpenLoop;
 
   parameter Modelica.SIunits.Time samplePeriod=2*60
     "Sample period of component, set to the same value as the trim and respond that process yPreSetReq";
 
-  MultizoneVAV.UncertaintyModels.LibraryModifications.Buildings_S.Controls.OBC.ASHRAE.G36_PR1.TerminalUnits.Controller_AirflowChattering conVAV_406(
+  MultizoneVAV.UncertaintyModels.LibraryModifications.Buildings_S.Controls.OBC.ASHRAE.G36_PR1.TerminalUnits.Controller_AirflowChatteringChallenge2 conVAV_406(
     vA_CooMax=vA_CooMaxAct_406,
     AFlo=flo.ARoo_406,
     vA_Min=vA_Min_406,
@@ -27,7 +27,7 @@ model Guideline36_AirflowChattering // _99_07_benchmarkwoTMixNoise
     TDisMin=TSupDes)
     "Controller for terminal unit 406";
 
-  MultizoneVAV.UncertaintyModels.LibraryModifications.Buildings_S.Controls.OBC.ASHRAE.G36_PR1.TerminalUnits.Controller_AirflowChattering conVAV_222(
+  MultizoneVAV.UncertaintyModels.LibraryModifications.Buildings_S.Controls.OBC.ASHRAE.G36_PR1.TerminalUnits.Controller_AirflowChatteringChallenge2 conVAV_222(
     vA_CooMax=vA_CooMaxAct_222,
     AFlo=flo.ARoo_222,
     vA_Min=vA_Min_222,
@@ -638,4 +638,4 @@ equation
   connect(isSetBac.y,conAHU.isSetBac);
   connect(isSetUp.y,conAHU.isSetUp);
 
-end Guideline36_AirflowChattering;
+end Guideline36_AirflowChatteringChallenge2;

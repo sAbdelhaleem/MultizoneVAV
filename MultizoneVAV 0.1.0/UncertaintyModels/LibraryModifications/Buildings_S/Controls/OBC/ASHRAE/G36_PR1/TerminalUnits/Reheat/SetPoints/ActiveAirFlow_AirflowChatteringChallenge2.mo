@@ -1,5 +1,5 @@
 within MultizoneVAV.UncertaintyModels.LibraryModifications.Buildings_S.Controls.OBC.ASHRAE.G36_PR1.TerminalUnits.Reheat.SetPoints;
-block ActiveAirFlow_AirflowChattering // _99_01_org
+block ActiveAirFlow_AirflowChatteringChallenge2 // _99_01_org
   "Output the active airflow setpoint for VAV reheat terminal unit"
 
   Buildings.Controls.OBC.CDL.Logical.Or or3_S; // shiyab added 190326
@@ -825,4 +825,4 @@ First implementation.
 </li>
 </ul>
 </html>"));
-end ActiveAirFlow_AirflowChattering;
+end ActiveAirFlow_AirflowChatteringChallenge2;
