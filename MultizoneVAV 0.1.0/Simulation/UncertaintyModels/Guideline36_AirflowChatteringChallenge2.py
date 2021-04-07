@@ -1,7 +1,7 @@
 from pymodelica import compile_fmu
 from pyfmi import load_fmu
 
-fmu_name = compile_fmu("MultizoneVAV.UncertaintyModels.VAVReheat.Guideline36_AirflowChatteringChallenge2", jvm_args='-Xmx4g', compiler_options={"generate_html_diagnostics":True})
+fmu_name = compile_fmu("MultizoneVAV.UncertaintyModels.VAVReheat.Guideline36_AirflowChatteringChallenge2", jvm_args='-Xmx4g', compiler_options={"generate_html_diagnostics":True},compiler_log_level='error')
 model= load_fmu(fmu_name,log_level=7)
 dayOfYear_start=296*(24*60*60)
 hourOfDay_start=0*(60*60)

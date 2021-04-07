@@ -62,7 +62,7 @@ dic_simCase={\
         },
 }
 
-fmu_name = compile_fmu('MultizoneVAV.UncertaintyModels.VAVReheat.Guideline36', jvm_args='-Xmx4g', compiler_options={"generate_html_diagnostics":True})
+fmu_name = compile_fmu('MultizoneVAV.UncertaintyModels.VAVReheat.Guideline36', jvm_args='-Xmx4g', compiler_options={"generate_html_diagnostics":True},compiler_log_level='error')
 model= load_fmu(fmu_name,log_level=7)
 model.instantiate()
 
