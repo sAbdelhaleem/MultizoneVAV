@@ -292,7 +292,7 @@ $ exit
 $ cd ~
 $ rm -r ~/ReproduceChallengesMultizoneVAV
 ~~~
-Note: the term "simulation crash" is used to refer to an abrupt stop in the simulation with an exception to report the cause of the crash in JModelica.org runtime logging. However, although the exception in the log file provided information of the cause of the crash, the exception was not detailed enough to identify the root cause and solve the crash.
+Note: the expression "simulation crash" is used in this paper to refer to an abrupt stop in the simulation, which was implemented using JModelica.org. Enabling JModelica.org runtime logging and inspecting the log file was used to identify the crash root cause. Despite that the log file provided information of the cause of the crash, no debugging information was found to localize the crash root cause within the compiled model diagnostics, at a time the model diagnostics included extensive sets of variables and equations. Thus, we were not able to identify the crash root cause using the debugging information.
 
 Note: The challenges are discussed in [[10]](#10).
 
