@@ -7,7 +7,7 @@ The multiple zone VAV system model was programmed with ASHRAE Guideline 36 (G36)
 
 Simulations were implemented using JModelica.org version 2.1 textual simulation environment compiled on an Ubuntu 16.04.4 LTS distribution. The testbed was developed using component models from the Modelica Buildings Library (MBL), which is an open-source library that contains component models that can be modified if necessary and then used to produce system models for dynamic simulation [[5]](#5). The models were built based on the structure of the OpenBuildingControl (OBC) example application for the G36 in a multiple zone VAV system [[6]](#6). The OBC project is intended to develop tools and processes for the performance evaluation, specification, deployment and verification of building control sequences. The models for the OBC example is maintained in the open-source MBL. We introduced adjustments and new models customized to the research objectives in [[1]](#1). For example, to perform model-based uncertainty quantification, we introduced new stochastic models using the open-source Modelica noise sub-library [[7]](#7) that is maintained in the Modelica Standard Library (MSL) [[8]](#8). For the detailed description of the MBL component models, before being adjusted for this testbed, the reader is referred to the model documentation in [[9]](#9).
 
-If you use this testbed, we would appreciate citations to Abdel Haleem et al. [[10]](#10) which describes the development of the tesbed with the ability to simulate the influence of the uncertainty inherent in the HVAC control components (e.g. sensors and actuators) on system outputs.
+**If you use this testbed, we would appreciate citations to Abdel Haleem et al. [[10]](#10)** which describes the development of the tesbed with the ability to simulate the influence of the uncertainty inherent in the HVAC control components (e.g. sensors and actuators) on system outputs.
 
 The organization of this README file is as follows: [Section 1](#Section1) describes a customized procedure for compiling JModelica.org from sources on Ubuntu; and [Section 2](#Section2) describes the installation procedure for MultizoneVAV and its dependencies on Ubuntu. If you have already installed JModelica.org on your operating system, you can skip Section 1. It is worth pointing out, that MultizoneVAV was installed successfully on Red Hat Enterprise Linux (RHEL) version 6, however, it was not tested on a windows operating system. In addition, MultizoneVAV was not tested with simulation environments other than JModelica.org, e.g., MultizoneVAV was not tested with Dymola.
 
@@ -261,47 +261,29 @@ $ rm -r ~/TestingMultizoneVAV
 ~~~
 Note: The MultizoneVAV system will be simulated during Jan 8 from 7:00 AM to 8:00 AM in the stochastic example, and during Jan 8 from midnight to noon in the deterministic example.
 
-**17.** Reproduce different challenges that were encountered during the development of the testbed using the command lines shown in [Code Block 17](#CodeBlock17).
+**17.** Reproduce an example of handling the stochastic signals within the control sequence to develop a robust model using the command lines shown in [Code Block 17](#CodeBlock17). The reader is referred to Section 5 in [[10]](#10) for discussion of the example.
 
-<a name="CodeBlock17"></a>Code Block 17: Reproduce challenges.
+<a name="CodeBlock17"></a>Code Block 17: Reproduce example discussed in Section 5 in [[10]](#10).
 ~~~
 $ $JMODELICA_HOME/bin/jm_ipython.sh
 
-$ mkdir ~/ReproduceChallengesMultizoneVAV
-$ cd ~/ReproduceChallengesMultizoneVAV
+$ mkdir ~/ReproduceExampleMultizoneVAV
+$ cd ~/ReproduceExampleMultizoneVAV
 
-# Reproduce airflow chattering discussed in Challenge 2 in [10]
-$ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36_AirflowChatteringChallenge2.py
-
-# Reproduce simulation crash discussed in Challenge 5 in [10]
-$ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36_SimulationCrashChallenge5.py
-
-# Reproduce simulation crash discussed in Challenge 8 in [10]
-$ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36_SimulationCrashChallenge8.py
-
-# Reproduce the minimum outdoor air intake set-point (MinOAsp) chattering discussed in Challenge 8 in [10]
-$ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36_MinOAspChatteringChallenge8.py
-
-# Reproduce simulation crash discussed in Challenge 10 in [10]
-$ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36_SimulationCrashChallenge10.py
-
-# Reproduce Boolean switch performance when stochastic signals are used to trigger the conditional expression discussed in Challenge 11 in [10]
-$ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36_BooleanSwitchSmoothingChallenge11.py
+# Reproduce example
+$ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36_BooleanSwitchSmoothingSection5.py
 
 $ exit
 $ cd ~
-$ rm -r ~/ReproduceChallengesMultizoneVAV
+$ rm -r ~/ReproduceExampleMultizoneVAV
 ~~~
-Note: the expression "simulation crash" is used in this paper to refer to an abrupt stop in the simulation, which was implemented using JModelica.org. Enabling JModelica.org runtime logging and inspecting the log file was used to identify the crash root cause. Despite that the log file provided information of the cause of the crash, no debugging information was found to localize the crash root cause within the compiled model diagnostics, at a time the model diagnostics included extensive sets of variables and equations. Thus, we were not able to identify the crash root cause using the debugging information.
-
-Note: The challenges are discussed in [[10]](#10).
 
 # References
 <a name="1"></a>[1]	S. M. Abdel Haleem, "Impact of Component Uncertainty and Control Loop on Performance in HVAC Systems with Advanced Sequences of Operation," Doctor of Philosophy, Architectural Engineering, The Pennsylvania State University, 2020. Accessed: Jan 08, 2021. [Online]. Available: https://etda.libraries.psu.edu/catalog/17584sma282.
 
 <a name="2"></a>[2]	S. M. Abdel Haleem, G. S. Pavlak, and W. P. Bahnfleth, "Performance of advanced control sequences in handling uncertainty in energy use and indoor environmental quality using uncertainty and sensitivity analysis for control components," Energy and Buildings, vol. 225, p. 110308, 2020, doi: https://doi.org/10.1016/j.enbuild.2020.110308.
 
-<a name="3"></a>[3]	S. Abdel Haleem, G. Pavlak, and W. Bahnfleth, “Impact of Control Loop Performance on Energy Use, Air Quality, and Thermal Comfort in Building Systems with Advanced Sequences of Operation,” Automation in Construction. (Under Review)
+<a name="3"></a>[3]	S. M. Abdel Haleem, G. S. Pavlak, and W. P. Bahnfleth, “Impact of Control Loop Performance on Energy Use, Air Quality, and Thermal Comfort in Building Systems with Advanced Sequences of Operation,” Automation in Construction. (Under Review)
 
 <a name="4"></a>[4]	Guideline 36-2018 High-Performance Sequences of Operation for HVAC Systems, American Society of Heating Refrigeration and Air-Conditioning Engineers, Atlanta, GA, USA, 2018. Accessed: Sep 7, 2020. [Online]. Available: https://www.techstreet.com/ashrae/standards/guideline-36-2018-high-performance-sequences-of-operation-for-hvac-systems?product_id=2016214
 
@@ -315,7 +297,7 @@ Note: The challenges are discussed in [[10]](#10).
 
 <a name="9"></a>[9]	Modelica Buildings Library: Model Documentation, 5.0.1 ed., (11/22/2017). Lawrence Berkeley National Laboratory (LBNL). Accessed: Jan 08, 2021. [Online]. Available: https://simulationresearch.lbl.gov/modelica/releases/v5.0.1/help/Buildings.html
 
-<a name="10"></a>[10]	S. Abdel Haleem, G. Pavlak, and W. Bahnfleth, “Model-based Testbed for Uncertainty Quantification in Building Control Systems with Advanced Sequences of Operation,” Journal of Building Performance Simulation. (Under Review)
+<a name="10"></a>[10]	S. M. Abdel Haleem, G. S. Pavlak, and W. P. Bahnfleth, “Model-based Testbed for Uncertainty Quantification in Building Control Systems with Advanced Sequences of Operation,” Journal of Architectural Engineering. (Under Review)
 
 # License & copyright
 **1.** MultizoneVAV
