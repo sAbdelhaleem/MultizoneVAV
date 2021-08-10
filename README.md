@@ -283,7 +283,7 @@ $ rm -r ~/ReproduceExampleMultizoneVAV
 
 <a name="2"></a>[2]	S. M. Abdel Haleem, G. S. Pavlak, and W. P. Bahnfleth, "Performance of advanced control sequences in handling uncertainty in energy use and indoor environmental quality using uncertainty and sensitivity analysis for control components," Energy and Buildings, vol. 225, p. 110308, 2020, doi: https://doi.org/10.1016/j.enbuild.2020.110308.
 
-<a name="3"></a>[3]	S. M. Abdel Haleem, G. S. Pavlak, and W. P. Bahnfleth, “Impact of control loop performance on energy use, air quality, and thermal comfort in building systems with advanced sequences of operation,” Automation in Construction, p. 103837, (2021), doi: https://doi.org/10.1016/j.autcon.2021.103837.
+<a name="3"></a>[3]	S. M. Abdel Haleem, G. S. Pavlak, and W. P. Bahnfleth, "Impact of control loop performance on energy use, air quality, and thermal comfort in building systems with advanced sequences of operation," Automation in Construction, vol. 130, p. 103837, (2021), doi: https://doi.org/10.1016/j.autcon.2021.103837.
 
 <a name="4"></a>[4]	Guideline 36-2018 High-Performance Sequences of Operation for HVAC Systems, American Society of Heating Refrigeration and Air-Conditioning Engineers, Atlanta, GA, USA, 2018. Accessed: Sep 7, 2020. [Online]. Available: https://www.techstreet.com/ashrae/standards/guideline-36-2018-high-performance-sequences-of-operation-for-hvac-systems?product_id=2016214
 
