@@ -255,6 +255,9 @@ $ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulat
 # Simulate the MultizoneVAV example with deterministic sensors and actuators
 $ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36_deterministic.py
 
+# Simulate the MultizoneVAV example two times, each with different stochastic value in the zone air temperature sensors. All except the change in the stochastic value are identical in the two simulations to show that the stochastic effects are customizable
+$ run /usr/local/Modelica/Library/MultizoneVAV_0.1.0/MultizoneVAV\ 0.1.0/Simulation/UncertaintyModels/Guideline36_Customizable.py
+
 $ exit
 $ cd ~
 $ rm -r ~/TestingMultizoneVAV
