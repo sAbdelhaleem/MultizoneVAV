@@ -300,7 +300,7 @@ $ rm -r ~/ReproduceExampleMultizoneVAV
 
 <a name="9"></a>[9]	Modelica Buildings Library: Model Documentation, 5.0.1 ed., (11/22/2017). Lawrence Berkeley National Laboratory (LBNL). Accessed: Jan 08, 2021. [Online]. Available: https://simulationresearch.lbl.gov/modelica/releases/v5.0.1/help/Buildings.html
 
-<a name="10"></a>[10]	S. M. Abdel Haleem, G. S. Pavlak, and W. P. Bahnfleth, “Model-based Testbed for Uncertainty Quantification in Building Control Systems with Advanced Sequences of Operation,” Journal of Architectural Engineering. (Under Review)
+<a name="10"></a>[10]	S. M. Abdel Haleem, G. S. Pavlak, and W. P. Bahnfleth, “Model-based Testbed for Uncertainty Quantification in Building Control Systems with Advanced Sequences of Operation,” Journal of Architectural Engineering. (Forthcoming, doi: 10.1061/(ASCE)AE.1943-5568.0000532)
 
 # License & copyright
 **1.** MultizoneVAV
